@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CarAI — Vehicle Valuation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='predict.css') }}">
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="logo">Car<span>AI</span></div>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/guide">Guide</a></li>
+    <li><a href="/predict">Predict</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ul>
+  <a href="/predict" class="nav-cta">Start Valuation</a>
+</nav>
+
+<main>
+
+  <section class="predict-hero">
+    <div class="hero-eyebrow">Instant Estimate</div>
+    <h1>VEHICLE<br><em>VALUATION</em></h1>
+    <p class="hero-sub">
+      Enter your vehicle specifications and receive
+      an estimated market value instantly.
+    </p>
+  </section>
+
+  <section class="form-section">
+    <form action="/predict" method="POST">
+
+      <div class="form-group-label">Performance</div>
+      <div class="form-grid">
+
+        <div class="input-card">
+          <label>Engine Size <span class="range">60 — 350</span></label>
+          <input type="number" step="0.1" min="60" max="350" placeholder="e.g. 130" name="enginesize" required>
+          <small>Engine displacement of the vehicle</small>
+        </div>
+
+        <div class="input-card">
+          <label>Horsepower <span class="range">48 — 300</span></label>
+          <input type="number" min="48" max="300" placeholder="e.g. 110" name="horsepower" required>
+          <small>Engine power output</small>
+        </div>
+
+        <div class="input-card">
+          <label>Bore Ratio <span class="range">2.0 — 4.0</span></label>
+          <input type="number" step="0.01" min="2" max="4" placeholder="e.g. 3.2" name="boreratio" required>
+          <small>Diameter of engine cylinders</small>
+        </div>
+
+      </div>
+
+      <div class="form-group-label">Dimensions & Weight</div>
+      <div class="form-grid">
+
+        <div class="input-card">
+          <label>Curb Weight <span class="range">1500 — 4500</span></label>
+          <input type="number" min="1500" max="4500" placeholder="e.g. 2500" name="curbweight" required>
+          <small>Vehicle weight without passengers or cargo</small>
+        </div>
+
+        <div class="input-card">
+          <label>Car Width <span class="range">60 — 75</span></label>
+          <input type="number" step="0.1" min="60" max="75" placeholder="e.g. 66" name="carwidth" required>
+          <small>Overall width of the vehicle</small>
+        </div>
+
+        <div class="input-card">
+          <label>Car Length <span class="range">140 — 210</span></label>
+          <input type="number" step="0.1" min="140" max="210" placeholder="e.g. 170" name="carlength" required>
+          <small>Total length of the vehicle</small>
+        </div>
+
+        <div class="input-card">
+          <label>Wheelbase <span class="range">85 — 120</span></label>
+          <input type="number" step="0.1" min="85" max="120" placeholder="e.g. 98" name="wheelbase" required>
+          <small>Distance between front and rear wheels</small>
+        </div>
+
+        <div class="input-card">
+          <label>City MPG <span class="range">10 — 50</span></label>
+          <input type="number" min="10" max="50" placeholder="e.g. 25" name="citympg" required>
+          <small>Fuel efficiency during city driving</small>
+        </div>
+
+        <div class="input-card">
+          <label>Highway MPG <span class="range">15 — 55</span></label>
+          <input type="number" min="15" max="55" placeholder="e.g. 32" name="highwaympg" required>
+          <small>Fuel efficiency during highway driving</small>
+        </div>
+
+      </div>
+
+      <div class="form-group-label">Configuration</div>
+      <div class="config-grid">
+
+        <div class="input-card">
+          <label>Drive Wheel</label>
+          <select name="drivewheel">
+            <option value="0">4WD — Four Wheel Drive</option>
+            <option value="1">FWD — Front Wheel Drive</option>
+            <option value="2">RWD — Rear Wheel Drive</option>
+          </select>
+          <small>Vehicle drivetrain configuration</small>
+        </div>
+
+        <div class="input-card">
+          <label>Fuel System</label>
+          <select name="fuelsystem">
+            <option value="0">1BBL — Single Barrel</option>
+            <option value="1">2BBL — Two Barrel</option>
+            <option value="2">4BBL — Four Barrel</option>
+            <option value="3">IDI — Indirect Diesel</option>
+            <option value="4">MFI — Mechanical Fuel Injection</option>
+            <option value="5">MPFI — Multi Point Fuel Injection</option>
+            <option value="6">SPDI — Single Point Direct</option>
+            <option value="7">SPFI — Single Point Fuel</option>
+          </select>
+          <small>See <a href="/guide">Guide</a> for fuel system details</small>
+        </div>
+
+      </div>
+
+      <div class="form-footer">
+        <button type="submit" class="predict-btn">Estimate Vehicle Value →</button>
+      </div>
+
+    </form>
+  </section>
+
+  {% if prediction %}
+  <section class="result-section">
+    <div class="result-card">
+      <div class="result-label">Estimated Vehicle Value</div>
+      <div class="result-price">₹ {{ prediction }}</div>
+      <p class="result-note">
+        This estimate is based on the vehicle specifications provided
+        and represents an approximate market valuation.
+      </p>
+      <a href="/predict" class="btn-ghost">Run Another Estimate</a>
+    </div>
+  </section>
+  {% endif %}
+
+  <footer>
+    <div class="footer-logo">CarAI</div>
+    <span class="footer-copy">© 2026 CarAI. All Rights Reserved.</span>
+  </footer>
+
+</main>
+
+</body>
+</html>

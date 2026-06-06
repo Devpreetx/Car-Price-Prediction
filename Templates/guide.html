@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CarAI — Vehicle Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='guide.css') }}">
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="logo">Car<span>AI</span></div>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/guide">Guide</a></li>
+    <li><a href="/predict">Predict</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ul>
+  <a href="/predict" class="nav-cta">Start Valuation</a>
+</nav>
+
+<main>
+
+  <section class="guide-hero">
+    <div class="hero-eyebrow">Documentation</div>
+    <h1>VEHICLE<br>SPECIFICATION<br><em>GUIDE</em></h1>
+    <p class="hero-sub">
+      Understand the key specifications used in vehicle valuation
+      and how they influence estimated market value.
+    </p>
+  </section>
+
+  <section class="section">
+    <div class="section-label">Core Specifications</div>
+    <h2 class="section-title">WHAT WE<br><em>MEASURE</em></h2>
+    <div class="guide-grid">
+
+      <div class="guide-card">
+        <span class="guide-num">01</span>
+        <div class="guide-body">
+          <h3>Engine Size</h3>
+          <p>Total engine displacement of the vehicle. Larger engines generally provide more power and may increase vehicle value.</p>
+        </div>
+      </div>
+
+      <div class="guide-card">
+        <span class="guide-num">02</span>
+        <div class="guide-body">
+          <h3>Curb Weight</h3>
+          <p>Weight of the vehicle without passengers or cargo. Heavier vehicles are often associated with premium segments.</p>
+        </div>
+      </div>
+
+      <div class="guide-card">
+        <span class="guide-num">03</span>
+        <div class="guide-body">
+          <h3>Horsepower</h3>
+          <p>Engine power output. Higher horsepower usually improves performance and market appeal.</p>
+        </div>
+      </div>
+
+      <div class="guide-card">
+        <span class="guide-num">04</span>
+        <div class="guide-body">
+          <h3>Car Width</h3>
+          <p>Overall width of the vehicle body. Wider vehicles often provide more cabin comfort and stability.</p>
+        </div>
+      </div>
+
+      <div class="guide-card">
+        <span class="guide-num">05</span>
+        <div class="guide-body">
+          <h3>Car Length</h3>
+          <p>Distance from front bumper to rear bumper. Larger vehicles may offer increased interior space.</p>
+        </div>
+      </div>
+
+      <div class="guide-card">
+        <span class="guide-num">06</span>
+        <div class="guide-body">
+          <h3>Wheelbase</h3>
+          <p>Distance between front and rear wheels. Longer wheelbases generally improve ride comfort.</p>
+        </div>
+      </div>
+
+      <div class="guide-card">
+        <span class="guide-num">07</span>
+        <div class="guide-body">
+          <h3>Bore Ratio</h3>
+          <p>Diameter of engine cylinders which influences engine performance characteristics.</p>
+        </div>
+      </div>
+
+      <div class="guide-card">
+        <span class="guide-num">08</span>
+        <div class="guide-body">
+          <h3>City MPG</h3>
+          <p>Fuel efficiency during city driving. Higher MPG means lower fuel consumption.</p>
+        </div>
+      </div>
+
+      <div class="guide-card">
+        <span class="guide-num">09</span>
+        <div class="guide-body">
+          <h3>Highway MPG</h3>
+          <p>Fuel efficiency achieved on highways and long-distance travel.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="section-label">Drive Configuration</div>
+    <h2 class="section-title">DRIVE WHEEL<br><em>TYPES</em></h2>
+    <div class="wheel-grid">
+
+      <div class="wheel-card">
+        <div class="wheel-badge">1</div>
+        <img src="{{ url_for('static', filename='images/fwd.png') }}" alt="FWD">
+        <div class="wheel-body">
+          <h3>Front Wheel Drive</h3>
+          <span class="wheel-tag">FWD</span>
+          <p>Power is delivered to the front wheels. Provides good traction and fuel efficiency for everyday driving.</p>
+        </div>
+      </div>
+
+      <div class="wheel-card">
+        <div class="wheel-badge">2</div>
+        <img src="{{ url_for('static', filename='images/rwd.png') }}" alt="RWD">
+        <div class="wheel-body">
+          <h3>Rear Wheel Drive</h3>
+          <span class="wheel-tag">RWD</span>
+          <p>Power is delivered to the rear wheels. Offers better balance and sporty driving performance.</p>
+        </div>
+      </div>
+
+      <div class="wheel-card">
+        <div class="wheel-badge">0</div>
+        <img src="{{ url_for('static', filename='images/awd.png') }}" alt="4WD">
+        <div class="wheel-body">
+          <h3>Four Wheel Drive</h3>
+          <span class="wheel-tag">4WD</span>
+          <p>Power is delivered to all four wheels. Improves traction and control in challenging conditions.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-label">Fuel Technology</div>
+    <h2 class="section-title">FUEL SYSTEM<br><em>TYPES</em></h2>
+    <div class="fuel-grid">
+
+      <div class="fuel-card">
+        <span class="fuel-num">0</span>
+        <div class="fuel-body">
+          <h3>1BBL</h3>
+          <p>Single-barrel carburetor used in older economy vehicles.</p>
+        </div>
+      </div>
+
+      <div class="fuel-card">
+        <span class="fuel-num">1</span>
+        <div class="fuel-body">
+          <h3>2BBL</h3>
+          <p>Two-barrel carburetor offering improved fuel-air mixing.</p>
+        </div>
+      </div>
+
+      <div class="fuel-card">
+        <span class="fuel-num">2</span>
+        <div class="fuel-body">
+          <h3>4BBL</h3>
+          <p>High-performance four-barrel carburetor used in powerful engines.</p>
+        </div>
+      </div>
+
+      <div class="fuel-card">
+        <span class="fuel-num">3</span>
+        <div class="fuel-body">
+          <h3>IDI</h3>
+          <p>Indirect diesel injection system for diesel-powered vehicles.</p>
+        </div>
+      </div>
+
+      <div class="fuel-card">
+        <span class="fuel-num">4</span>
+        <div class="fuel-body">
+          <h3>MFI</h3>
+          <p>Mechanical Fuel Injection system with precise fuel delivery.</p>
+        </div>
+      </div>
+
+      <div class="fuel-card">
+        <span class="fuel-num">5</span>
+        <div class="fuel-body">
+          <h3>MPFI</h3>
+          <p>Multi-Point Fuel Injection. One injector per cylinder for efficiency.</p>
+        </div>
+      </div>
+
+      <div class="fuel-card">
+        <span class="fuel-num">6</span>
+        <div class="fuel-body">
+          <h3>SPDI</h3>
+          <p>Single Point Direct Injection fuel delivery technology.</p>
+        </div>
+      </div>
+
+      <div class="fuel-card">
+        <span class="fuel-num">7</span>
+        <div class="fuel-body">
+          <h3>SPFI</h3>
+          <p>Single Point Fuel Injection system used in compact vehicles.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="cta-left">
+      <h2>READY TO<br><em>ESTIMATE</em><br>YOUR VEHICLE?</h2>
+    </div>
+    <div class="cta-right">
+      <p>Now that you understand the specifications, get an instant data-driven valuation.</p>
+      <a href="/predict" class="btn-primary">Start Valuation →</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo">CarAI</div>
+    <span class="footer-copy">© 2026 CarAI. All Rights Reserved.</span>
+  </footer>
+
+</main>
+
+</body>
+</html>

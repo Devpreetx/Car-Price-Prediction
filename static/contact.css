@@ -1,0 +1,293 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --black: #0c0c0c;
+  --white: #f5f2ec;
+  --accent: #c8a96e;
+  --accent-dark: #9e7d45;
+  --mid: #1a1a1a;
+  --muted: #6b6b6b;
+  --border: rgba(200,169,110,0.2);
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--black);
+  color: var(--white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 4rem;
+  background: rgba(12,12,12,0.95);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+}
+.logo span { color: var(--white); }
+
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links a {
+  text-decoration: none;
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(245,242,236,0.55);
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--accent); }
+.nav-links a.active { color: var(--accent); }
+
+.nav-cta {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--black);
+  background: var(--accent);
+  padding: 0.55rem 1.4rem;
+  transition: background 0.2s, transform 0.15s;
+}
+.nav-cta:hover { background: var(--accent-dark); transform: translateY(-1px); }
+
+main { display: block; width: 100%; }
+
+.contact-hero {
+  padding: 6rem 4rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--black);
+}
+
+.hero-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.hero-eyebrow::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--accent);
+}
+
+.contact-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 8vw, 8rem);
+  line-height: 0.92;
+  letter-spacing: 0.02em;
+  color: var(--white);
+  max-width: 700px;
+}
+.contact-hero h1 em { font-style: normal; color: var(--accent); }
+
+.hero-sub {
+  margin-top: 2rem;
+  max-width: 480px;
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: rgba(245,242,236,0.6);
+  line-height: 1.8;
+}
+
+.contact-section {
+  display: flex;
+  align-items: stretch;
+  border-bottom: 1px solid var(--border);
+}
+
+.profile-col {
+  width: 360px;
+  flex-shrink: 0;
+  padding: 4rem;
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.2rem;
+}
+
+.profile-avatar {
+  width: 72px;
+  height: 72px;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  background: var(--mid);
+  margin-bottom: 0.5rem;
+}
+
+.profile-name {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  letter-spacing: 0.06em;
+  color: var(--white);
+  line-height: 1;
+}
+
+.profile-role {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 400;
+}
+
+.profile-bio {
+  font-size: 0.88rem;
+  font-weight: 300;
+  color: var(--muted);
+  line-height: 1.8;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border);
+  width: 100%;
+}
+
+.btn-primary {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--black);
+  background: var(--accent);
+  padding: 0.9rem 1.8rem;
+  margin-top: 0.5rem;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-primary:hover { background: var(--accent-dark); transform: translateY(-2px); }
+
+.info-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.info-card {
+  padding: 2rem 3rem;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.2s;
+}
+.info-card:hover { background: rgba(200,169,110,0.03); }
+.info-card:last-child { border-bottom: none; }
+
+.info-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.info-label::before {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 1px;
+  background: var(--accent);
+}
+
+.info-value {
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: rgba(245,242,236,0.75);
+  line-height: 1.7;
+}
+
+.info-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--border);
+  padding: 0.3rem 0.8rem;
+  transition: background 0.2s, color 0.2s;
+}
+.tag:hover { background: var(--accent); color: var(--black); }
+
+footer {
+  padding: 2rem 4rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-logo {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+}
+
+.footer-mid {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.footer-name {
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(245,242,236,0.5);
+}
+
+.footer-dot {
+  color: var(--border);
+}
+
+.footer-email {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-email:hover { color: var(--accent-dark); }
+
+.footer-copy {
+  font-size: 0.68rem;
+  color: rgba(107,107,107,0.6);
+  letter-spacing: 0.1em;
+}

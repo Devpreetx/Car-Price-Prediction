@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CarAI — Vehicle Valuation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="logo">Car<span>AI</span></div>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/guide">Guide</a></li>
+    <li><a href="/predict">Predict</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ul>
+  <a href="/predict" class="nav-cta">Start Valuation</a>
+</nav>
+
+<main>
+
+  <section class="hero">
+    <div class="hero-eyebrow">Intelligent Vehicle Pricing</div>
+    <h1>FIND THE<br>TRUE <em>VALUE</em><br>OF YOUR<br>VEHICLE</h1>
+    <p class="hero-sub">
+      Professional vehicle valuation powered by intelligent pricing analysis.
+      Receive an instant estimate based on vehicle specifications,
+      performance characteristics and efficiency indicators.
+    </p>
+    <div class="hero-buttons">
+      <a href="/predict" class="btn-primary">Start Valuation</a>
+      <a href="/guide" class="btn-ghost">Learn More</a>
+    </div>
+  </section>
+
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-num">200+</div>
+      <div class="stat-label">Vehicles Analysed</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">6</div>
+      <div class="stat-label">Valuation Factors</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">&lt;3s</div>
+      <div class="stat-label">Instant Results</div>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="section-label">Why Choose CarAI</div>
+    <h2 class="section-title">BUILT FOR<br><em>PRECISION</em></h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <span class="feature-icon">⚡</span>
+        <h3>Fast Results</h3>
+        <p>Generate vehicle valuations in seconds with a streamlined, no-friction experience.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🎯</span>
+        <h3>Smart Insights</h3>
+        <p>Understand precisely how vehicle specifications influence real market value.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🚗</span>
+        <h3>Vehicle Focused</h3>
+        <p>Built specifically for automotive valuation — not a generic pricing tool.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">💰</span>
+        <h3>Price Estimation</h3>
+        <p>Instant pricing estimates derived from real vehicle specifications and market data.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">📊</span>
+        <h3>Pricing Factors</h3>
+        <p>Discover which characteristics influence valuation the most, ranked by impact.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">⚙️</span>
+        <h3>Configuration Analysis</h3>
+        <p>Evaluate how different vehicle configurations affect your estimated value.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="section-label">Supported Types</div>
+    <h2 class="section-title">VEHICLE<br><em>CATEGORIES</em></h2>
+    <div class="categories-row">
+      <div class="category-item">
+        <span class="cat-icon">🏎️</span>
+        <span class="cat-label">Sports Cars</span>
+      </div>
+      <div class="category-item">
+        <span class="cat-icon">🚙</span>
+        <span class="cat-label">SUVs</span>
+      </div>
+      <div class="category-item">
+        <span class="cat-icon">🚘</span>
+        <span class="cat-label">Luxury Sedans</span>
+      </div>
+      <div class="category-item">
+        <span class="cat-icon">⚡</span>
+        <span class="cat-label">Electric Vehicles</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-label">What We Analyse</div>
+    <h2 class="section-title">KEY VALUATION<br><em>FACTORS</em></h2>
+    <div class="factors-list">
+      <div class="factor-row">
+        <span class="factor-num">01</span>
+        <span class="factor-text">Engine Performance</span>
+      </div>
+      <div class="factor-row">
+        <span class="factor-num">02</span>
+        <span class="factor-text">Horsepower</span>
+      </div>
+      <div class="factor-row">
+        <span class="factor-num">03</span>
+        <span class="factor-text">Vehicle Dimensions</span>
+      </div>
+      <div class="factor-row">
+        <span class="factor-num">04</span>
+        <span class="factor-text">Fuel Efficiency</span>
+      </div>
+      <div class="factor-row">
+        <span class="factor-num">05</span>
+        <span class="factor-text">Vehicle Weight</span>
+      </div>
+      <div class="factor-row">
+        <span class="factor-num">06</span>
+        <span class="factor-text">Car Wheel</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="cta-left">
+      <h2>READY TO<br><em>ESTIMATE</em><br>YOUR VEHICLE?</h2>
+    </div>
+    <div class="cta-right">
+      <p>Start your valuation journey today and receive an instant, data-driven estimate.</p>
+      <a href="/predict" class="btn-primary">Start Valuation →</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo">CarAI</div>
+    <span class="footer-copy">© 2026 CarAI. All Rights Reserved.</span>
+  </footer>
+
+</main>
+
+</body>
+</html>
